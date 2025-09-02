@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Digital Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #e6f7ff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #0072ff;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    
+    #projects .project {
+      background: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    #contact form {
+      display: flex;
+      flex-direction: column;
+    }
+    #contact input, #contact textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #contact button {
+      background: #0072ff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #contact button:hover {
+      background: #00bcd4;
+    }
+    footer {
+      background: #0072ff;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Digital Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am <b>Kaviya</b>, a passionate web developer. I enjoy creating clean, modern, and responsive web applications. This portfolio showcases my work and skills.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Digital portfolio</h3>
+      <p>A digital portfolio is an online showcase of a person’s skills, projects, achievements, and experiences, designed to highlight their professional or academic journey.
+
+Technologies used: HTML, CSS, JavaScript.</p>
+    </div>
+    <div class="project">
+      <h3>E-commerce</h3>
+      <p>An e-commerce platform is an online system that allows businesses and individuals to buy and sell products or services over the internet.
+
+Technologies used: HTML, CSS, JavaScript.</p>
+    </div>
+    <div class="project">
+      <h3>School website</h3>
+      <p> school website is an online platform that provides information about the school, including its history, courses, staff, events, and resources for students, parents, and teachers.
+
+*Technologies used:* HTML, CSS, JavaScript.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formResponse" style="margin-top:10px; color: green;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kaviya| All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Contact form submission handling
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      document.getElementById("formResponse").textContent = 
+        "Thank you, " + name + "! Your message has been sent.";
+      document.getElementById("contactForm").reset();
+    });
+
+    // Smooth scrolling effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
